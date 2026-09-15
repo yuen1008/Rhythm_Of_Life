@@ -43,5 +43,6 @@ This project aims to raise awareness for wildlife conservation by letting users 
 
 - [Unsplash(image source)](https://unsplash.com/)
 - [tonejs-instruments(audio source)](https://github.com/nbrosowsky/tonejs-instruments/tree/master?tab=License-1-ov-file)
+- [Pixabay(BGM source)](https://pixabay.com/music/search/energy%20background%20music/)
 
 _Designed and developed by Yuening Zhang._
