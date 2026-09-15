@@ -41,7 +41,7 @@ This project aims to raise awareness for wildlife conservation by letting users 
 
 ## Resource Reference
 
-- [text](https://unsplash.com/)
-- [text](https://github.com/nbrosowsky/tonejs-instruments/tree/master?tab=License-1-ov-file)
+- [Unsplash(image source)](https://unsplash.com/)
+- [tonejs-instruments(audio source)](https://github.com/nbrosowsky/tonejs-instruments/tree/master?tab=License-1-ov-file)
 
 _Designed and developed by Yuening Zhang._
