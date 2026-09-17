@@ -1,10 +1,10 @@
 # Rhythm_Of_Life
 A non-profit interactive web project that connects humans and animals through the rhythm of heartbeats.
 
-
 ## About The Project
 
 "Rhythm of Life" lets users feel the resting heart rates of 7 different animals. By tapping the spacebar, users match the animal's BPM (Beats Per Minute), complete a visual puzzle, and create a short musical melody.
+- [Prototype on Figma](https://www.figma.com/proto/DpN1y15476VAM9DlC3KFUT/wireframe?node-id=0-1&t=BRGW1rM7MtdsWW4z-1)
 
 ## Features
 
@@ -28,7 +28,7 @@ This project aims to raise awareness for wildlife conservation by letting users 
 ## Tech Stack
 
 - HTML / CSS / JavaScript
-- Hosted on Vercel
+- Figma
 
 ## How to Play
 
