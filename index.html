@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rhythm of Life</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="repo-toggle-btn">
+        <span>Repository</span>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+    </button>
+
+    <!-- Sidebar Repository -->
+    <div id="repository-modal" class="hidden">
+        <div class="repo-header">
+            <h2 class="elegant-font">Repository</h2>
+            <button id="close-repo-btn">✕</button>
+        </div>
+        <div class="repo-grid" id="repo-grid"></div>
+    </div>
+
+    <!-- Repository Detail Popup -->
+    <div id="repo-detail-modal" class="hidden">
+        <button id="close-repo-detail-btn">✕</button>
+        <h3 id="repo-detail-name" class="elegant-font">Animal Name</h3>
+        <div id="repo-detail-status" class="status-badge">Status</div>
+        <div class="repo-detail-content">
+            <h4 class="elegant-font">Data</h4>
+            <p id="repo-detail-data">...</p>
+            <h4 class="elegant-font">Cause</h4>
+            <p id="repo-detail-cause">...</p>
+            <h4 class="elegant-font">Solution</h4>
+            <p id="repo-detail-solution">...</p>
+        </div>
+    </div>
+
+    <div id="app">
+        <!-- 0. Lottery Screen -->
+        <section id="screen-lottery" class="screen active">
+            <div class="full-bg lottery-bg">
+                <div class="lottery-container">
+                    <h1 class="lottery-title elegant-font">Spin for a Life</h1>
+                    <div class="roulette-box">
+                        <img id="roulette-img" src="assets/image/Icons/1-whale.png" alt="Roulette">
+                    </div>
+                    <button id="btn-lottery" class="btn-lottery-3d">LOTTERY</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 1. Selection Screen -->
+        <section id="screen-selection" class="screen hidden">
+            <div class="selection-layout">
+                <div class="info-panel">
+                    <h1 id="sel-name" class="elegant-font">Blue Whale</h1>
+                    <p id="sel-bpm" class="elegant-font">BPM 10-30</p>
+                </div>
+                <div class="center-panel">
+                    <img id="sel-image" src="" alt="Animal">
+                </div>
+                <div class="action-panel">
+                    <button id="btn-rotate">Spin Again 🎲</button>
+                    <button id="btn-begin">Begin Game</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Audio Check Screen -->
+        <section id="screen-audio-check" class="screen hidden">
+            <div class="full-bg dynamic-pan-bg" id="audio-bg">
+                <div class="overlay-text fade-sequence">
+                    <h2 class="fade-item elegant-font" style="--delay: 0.3s">Please tune up your speaker</h2>
+                    <p class="fade-item elegant-font" style="--delay: 0.6s">Listen to their heartbeat...</p>
+                    <p class="fade-item elegant-font" style="--delay: 0.9s">Prepare to connect.</p>
+                </div>
+                <button id="btn-skip-audio" class="fade-item glowing-skip elegant-font" style="--delay: 1.2s">
+                    Skip / Press Space ➔
+                </button>
+            </div>
+        </section>
+
+        <!-- 3. Game Screen -->
+        <section id="screen-game" class="screen hidden">
+            <div class="full-bg" id="game-bg">
+                <div class="game-top-bar">
+                    <div class="progress-container">
+                        <div id="game-progress-fill"></div>
+                    </div>
+                    <p id="game-progress-text" class="elegant-font">Progress: 0% | Score: 0 / 1500</p>
+                </div>
+
+                <div class="game-ui">
+                    <p class="instruction-text elegant-font">Feel their heart rate. The falling speed matches their pulse.<br>Catch their food!</p>
+                    <div id="rhythm-track">
+                        <div id="target-zone"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Score Screen -->
+        <section id="screen-score" class="screen hidden">
+            <div class="full-bg" id="score-bg">
+                <div class="score-elegant-layout">
+                    <div class="score-image-container">
+                        <img id="score-animal-img" src="" alt="Animal Score">
+                    </div>
+                    <div class="score-typography">
+                        <h3 class="elegant-font">Final Score</h3>
+                        <div class="score-numbers elegant-font">
+                            <span id="final-score-val" class="score-huge">1200</span>
+                            <hr class="score-divider">
+                            <span class="score-max">1500</span>
+                        </div>
+                        <div class="btn-group-elegant">
+                            <button id="btn-restart" class="btn-lottery-3d" style="width: 140px; height: 50px; font-size: 1rem;">Restart</button>
+                            <button id="btn-continue" class="btn-lottery-3d" style="width: 140px; height: 50px; font-size: 1rem;">Continue</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Collect Screen -->
+        <section id="screen-collect" class="screen hidden">
+             <div class="full-bg" id="collect-bg">
+                <div class="overlay-text center-box">
+                    <p class="elegant-font pulse-text">Click the picture to collect and continue</p>
+                    <img id="collect-image" src="" alt="Collect Me" class="collectable">
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Info Flow Screen (Floating Nodes) -->
+        <section id="screen-info" class="screen hidden">
+             <div class="full-bg info-bg">
+                <div class="floating-nodes-container" id="floating-nodes-container">
+                    <div class="floating-node node-1 elegant-font" data-target="info-data">Data</div>
+                    <div class="floating-node node-2 elegant-font" data-target="info-cause">Cause</div>
+                    <div class="floating-node node-3 elegant-font" data-target="info-solution">Solution</div>
+                </div>
+
+                <!-- Updated Navigation Controls -->
+                <div class="info-nav-controls">
+                    <button id="btn-start-next" class="elegant-font outline-btn">Start Next Journey</button>
+                    <button id="btn-finish-journey" class="elegant-font highlight-btn">End Journey</button>
+                </div>
+
+                <div id="info-reading-modal" class="reading-modal hidden">
+                    <div class="reading-content">
+                        <button class="btn-close-modal">✕</button>
+                        <h3 id="reading-title" class="elegant-font info-title">Title</h3>
+                        <p id="reading-text" class="content-text elegant-font">Text goes here...</p>
+                    </div>
+                </div>
+             </div>
+        </section>
+
+        <!-- 7. Conclusion Screen -->
+        <section id="screen-conclusion" class="screen hidden">
+            <div class="full-bg conclusion-bg">
+                <div class="overlay-text conclusion-box">
+                    <h2 class="elegant-font" style="font-size: 4rem;">Every Heartbeat Matters</h2>
+                    <p class="elegant-font" style="font-size: 1.5rem; opacity: 0.8; margin-top: 1rem;">
+                        From the depths of the ocean to the highest peaks,<br>the rhythm of life connects us all.<br>Your awareness is their first line of defense.
+                    </p>
+                    <button id="btn-final-restart" class="btn-lottery-3d" style="margin-top: 3rem; width: auto; padding: 0 40px;">RESTART PROJECT</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
