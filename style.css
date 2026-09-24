@@ -23,6 +23,7 @@ button { background: transparent; border: none; color: white; cursor: pointer; f
     position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
     z-index: -1; overflow: hidden; pointer-events: none;
 }
+
 .orb {
     position: absolute; border-radius: 50%;
     filter: blur(120px);
