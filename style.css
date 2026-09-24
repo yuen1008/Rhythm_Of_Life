@@ -69,11 +69,11 @@ button { background: transparent; border: none; color: white; cursor: pointer; f
 
 .glowing-skip {
     position: absolute; bottom: 40px; right: 40px; font-size: 1.2rem;
-    padding: 12px 24px; border-radius: 30px; border: 1px solid #00ffff;
-    color: #00ffff; box-shadow: 0 0 15px rgba(0,255,255,0.3);
+    padding: 12px 24px; border-radius: 30px; border: 1px solid #4facfe;
+    color: #4facfe; box-shadow: 0 0 15px rgba(16, 141, 198, 0.3);
     transition: 0.3s; z-index: 50; background: rgba(0,0,0,0.4);
 }
-.glowing-skip:hover { background: #00ffff; color: #0c1021; box-shadow: 0 0 25px rgba(0,255,255,0.8); }
+.glowing-skip:hover { background: #4facfe; color: #0c1021; box-shadow: 0 0 25px rgba(87, 123, 214, 0.8); }
 
 /* --- Repository Sidebar --- */
 #repo-toggle-btn {
@@ -101,14 +101,14 @@ button { background: transparent; border: none; color: white; cursor: pointer; f
     transition: 0.3s; flex-shrink: 0;
 }
 .repo-slot img { width: 70%; height: 70%; object-fit: contain; }
-.repo-slot.filled { cursor: pointer; border-color: #00ffff; box-shadow: 0 0 10px rgba(0,255,255,0.2); }
-.repo-slot.filled:hover { transform: scale(1.1); box-shadow: 0 0 15px rgba(0,255,255,0.6); }
+.repo-slot.filled { cursor: pointer; border-color: #53648c; box-shadow: 0 0 10px rgba(87, 87, 192, 0.355); }
+.repo-slot.filled:hover { transform: scale(1.1); box-shadow: 0 0 15px rgba(13, 77, 226, 0.6); }
 
 /* --- Repository Detail Modal --- */
 #repo-detail-modal {
     position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
     width: 90%; max-width: 600px; background: rgba(12, 16, 33, 0.95);
-    border: 1px solid rgba(0,255,255,0.3); border-radius: 20px; padding: 40px;
+    border: 1px solid rgba(13, 77, 226, 0.3); border-radius: 20px; padding: 40px;
     z-index: 300; backdrop-filter: blur(10px); box-shadow: 0 20px 50px rgba(0,0,0,0.8);
     display: flex; flex-direction: column; gap: 10px;
 }
@@ -118,13 +118,26 @@ button { background: transparent; border: none; color: white; cursor: pointer; f
 #repo-detail-name { font-size: 2.5rem; color: #fff; margin-bottom: 5px; }
 .status-badge { 
     display: inline-block; padding: 5px 15px; border-radius: 20px; 
-    background: rgba(255, 68, 68, 0.2); color: #ff4444; border: 1px solid #ff4444; 
+    background: rgba(255, 68, 68, 0.2); color: #d35252; border: 1px solid #e27b7b; 
     font-size: 0.9rem; margin-bottom: 15px; width: fit-content; text-transform: uppercase; letter-spacing: 1px;
 }
 .repo-detail-content { max-height: 50vh; overflow-y: auto; padding-right: 15px;}
-.repo-detail-content h4 { color: #00ffff; font-size: 1.2rem; margin-top: 15px; margin-bottom: 5px; font-weight: normal; }
+.repo-detail-content h4 { color: #81a3c3; font-size: 1.2rem; margin-top: 15px; margin-bottom: 5px; font-weight: normal; }
 .repo-detail-content p { color: #e0e0e0; line-height: 1.6; font-size: 1.1rem; }
 
+#repo-detail-modal, 
+.reading-content, 
+.conclusion-box,
+#repository-modal {
+    background: rgba(10, 18, 40, 0.4) !important;
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+}
+#repository-modal {
+    background: rgba(6, 12, 28, 0.5) !important;
+}
 
 /* 0. Lottery Screen */
 .lottery-container { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: 30px; }
@@ -133,8 +146,7 @@ button { background: transparent; border: none; color: white; cursor: pointer; f
 .roulette-box img { width: 60%; height: 60%; object-fit: contain; filter: invert(1); transition: 0.1s; }
 
 .btn-lottery-3d {
-    position: relative; width: 200px; height: 70px; background-color: #6a5acd; border-radius: 40px; border: none; color: white;
-    font-size: 1.5rem; font-weight: bold; letter-spacing: 2px; cursor: pointer; outline: none; transition: all 0.15s ease-out;
+    background-color: #1a3673;
     box-shadow: inset 0 10px 15px rgba(255, 255, 255, 0.4), inset 0 -10px 15px rgba(0, 0, 0, 0.5), 0 12px 15px rgba(0, 0, 0, 0.4);             
 }
 .btn-lottery-3d:active {
@@ -156,18 +168,18 @@ button { background: transparent; border: none; color: white; cursor: pointer; f
 /* 3. Game Screen */
 .game-top-bar { position: absolute; top: 20px; left: 50%; transform: translateX(-50%); width: 80%; max-width: 600px; display: flex; flex-direction: column; align-items: center; gap: 8px; z-index: 10; }
 .progress-container { width: 100%; height: 4px; background: rgba(255,255,255,0.2); border-radius: 2px; overflow: hidden; }
-#game-progress-fill { width: 0%; height: 100%; background: #00ffff; box-shadow: 0 0 10px #00ffff; transition: width 0.3s; }
+#game-progress-fill { width: 0%; height: 100%; background: #4facfe; box-shadow: 0 0 15px rgba(79, 172, 254, 0.6); }
 #game-progress-text { font-size: 1.2rem; letter-spacing: 1px; color: #fff; text-shadow: 0 0 5px #000; }
 
 .game-ui { position: absolute; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding-bottom: 5vh; }
 .instruction-text { position: absolute; top: 12vh; font-size: 1.6rem; letter-spacing: 1px; text-shadow: 0 0 10px #000; text-align: center; }
 #rhythm-track { width: 120px; height: 70vh; position: relative; border-left: 2px dashed rgba(255,255,255,0.2); border-right: 2px dashed rgba(255,255,255,0.2); overflow: hidden; }
-#target-zone { position: absolute; bottom: 20px; left: 0; width: 100%; height: 70px; border: 3px solid #ff00ff; border-radius: 12px; box-shadow: 0 0 15px #ff00ff; background: rgba(255,0,255,0.1); }
+#target-zone { border: 2px solid #4facfe; box-shadow: 0 0 20px rgba(79, 172, 254, 0.3); background: rgba(79, 172, 254, 0.05); }
 
 @keyframes wiggle { 0%, 100% { transform: translateX(0) rotate(0deg); } 25% { transform: translateX(-15px) rotate(-15deg); } 75% { transform: translateX(15px) rotate(15deg); } }
 .falling-emoji { position: absolute; font-size: 3.5rem; width: 100%; text-align: center; line-height: 1; filter: drop-shadow(0 5px 10px rgba(0,0,0,0.5)); animation: wiggle 1s infinite ease-in-out; }
-.hit-feedback { position: absolute; color: #00ffff; font-weight: bold; font-size: 2rem; text-shadow: 0 0 10px #00ffff; animation: floatUp 0.5s ease-out forwards; pointer-events: none; z-index: 10; }
-.miss-feedback { position: absolute; color: #ff4444; font-size: 1.2rem; font-style: italic; animation: floatDown 1s ease-in forwards; pointer-events: none; z-index: 10; }
+.hit-feedback { position: absolute; color: hsl(136, 33%, 75%); font-weight: bold; font-size: 2rem; text-shadow: 0 0 10px hsl(136, 33%, 75%); animation: floatUp 0.5s ease-out forwards; pointer-events: none; z-index: 10; }
+.miss-feedback { position: absolute; color: #d9adad; font-size: 1.2rem; font-style: italic; animation: floatDown 1s ease-in forwards; pointer-events: none; z-index: 10; }
 @keyframes floatUp { 0% { transform: translateY(0) scale(1); opacity: 1; } 100% { transform: translateY(-50px) scale(1.5); opacity: 0; } }
 @keyframes floatDown { 0% { transform: translateY(0); opacity: 1; } 100% { transform: translateY(30px); opacity: 0; } }
 
@@ -197,7 +209,7 @@ button { background: transparent; border: none; color: white; cursor: pointer; f
     cursor: pointer; transition: background 0.3s, transform 0.2s; backdrop-filter: blur(5px);
     animation: floating 8s ease-in-out infinite alternate;
 }
-.floating-node:hover { background: rgba(0, 255, 255, 0.2); border-color: #00ffff; box-shadow: 0 0 20px rgba(0,255,255,0.3); }
+.floating-node:hover { background: rgba(0, 255, 255, 0.2); border-color: #d2eaea; box-shadow: 0 0 20px rgba(213, 255, 255, 0.848); }
 .node-1 { top: 30%; left: 20%; animation-delay: 0s; }
 .node-2 { top: 60%; left: 50%; transform: translateX(-50%); animation-delay: -2s; }
 .node-3 { top: 40%; right: 20%; animation-delay: -4s; }
@@ -207,8 +219,8 @@ button { background: transparent; border: none; color: white; cursor: pointer; f
 .info-nav-controls { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); display: flex; gap: 30px; }
 .outline-btn { padding: 10px 20px; font-size: 1.2rem; border-bottom: 1px solid white; opacity: 0.7; transition: 0.3s; }
 .outline-btn:hover { opacity: 1; }
-.highlight-btn { padding: 10px 20px; font-size: 1.2rem; border-bottom: 2px solid #00ffff; color: #00ffff; transition: 0.3s; }
-.highlight-btn:hover { text-shadow: 0 0 10px #00ffff; }
+.highlight-btn { padding: 10px 20px; font-size: 1.2rem; border-bottom: 2px solid #4facfe; color: #4facfe; transition: 0.3s; }
+.highlight-btn:hover { text-shadow: 0 0 10px #4facfe; }
 
 .reading-modal {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
@@ -220,7 +232,7 @@ button { background: transparent; border: none; color: white; cursor: pointer; f
 .reading-content { position: relative; max-width: 800px; padding: 4rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; background: rgba(20, 25, 40, 0.9); }
 .btn-close-modal { position: absolute; top: 20px; right: 20px; font-size: 2rem; opacity: 0.7; }
 .btn-close-modal:hover { opacity: 1; }
-.info-title { font-size: 3rem; margin-bottom: 2rem; font-weight: normal; color: #00ffff;}
+.info-title { font-size: 3rem; margin-bottom: 2rem; font-weight: normal; color: #4facfe;}
 .content-text { font-size: 1.5rem; line-height: 1.8; color: #e0e0e0; }
 
 /* 7. Conclusion Screen */
