@@ -129,6 +129,10 @@ function init() {
         showScreen('audioCheck');
         checkAndApplyPanAnimation();
     };
+    document.getElementById('sel-image').onclick = () => {
+        showScreen('audioCheck');
+        checkAndApplyPanAnimation();
+    };
     
     document.getElementById('btn-skip-audio').onclick = startGame;
     
