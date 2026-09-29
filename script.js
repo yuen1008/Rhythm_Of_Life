@@ -124,7 +124,7 @@ function init() {
     document.getElementById('close-repo-detail-btn').onclick = () => document.getElementById('repo-detail-modal').classList.add('hidden');
     
     document.getElementById('btn-lottery').onclick = spinLottery;
-    document.getElementById('btn-rotate').onclick = () => showScreen('lottery');
+    document.querySelector('.roulette-box').onclick = spinLottery;document.getElementById('btn-rotate').onclick = () => showScreen('lottery');
     document.getElementById('btn-begin').onclick = () => {
         showScreen('audioCheck');
         checkAndApplyPanAnimation();
@@ -213,7 +213,10 @@ function checkAndApplyPanAnimation() {
 function spinLottery() {
     const rouletteImg = document.getElementById('roulette-img');
     const btn = document.getElementById('btn-lottery');
+    const rouletteBox = document.querySelector('.roulette-box');
+
     btn.disabled = true;
+    rouletteBox.style.pointerEvents = 'none';
     
     let spinCount = 0;
     const spinsTotal = 20;
@@ -230,6 +233,7 @@ function spinLottery() {
                 updateSelectionScreen();
                 showScreen('selection');
                 btn.disabled = false;
+                rouletteBox.style.pointerEvents = 'auto';
             }, 500);
         }
     }, speed);
