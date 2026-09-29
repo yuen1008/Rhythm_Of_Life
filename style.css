@@ -278,3 +278,55 @@ button { background: transparent; border: none; color: white; cursor: pointer; f
 
 /* 7. Conclusion Screen */
 .conclusion-box { background: rgba(0,0,0,0.6); padding: 4rem; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px); width: 80%; max-width: 800px;}
+
+/* Responsive Design for Tablets & Mobile) */
+@media screen and (max-width: 900px) {
+    /* 1. font size */
+    .overlay-text h2, .lottery-title, .info-panel h1, .score-typography h3 { font-size: 2.5rem !important; text-align: center; }
+    .info-title { font-size: 2rem; }
+    .content-text { font-size: 1.1rem; }
+    
+    /* 2. Selection Screen */
+    .selection-layout {
+        flex-direction: column;
+        justify-content: center;
+        gap: 2vh;
+        padding: 5% 5%;
+    }
+    .info-panel { text-align: center; }
+    .center-panel img { max-height: 45vh; } 
+    .action-panel { flex-direction: row; justify-content: center; width: 100%; gap: 15px;}
+    
+    /* 3. game interface */
+    .instruction-text { font-size: 1.2rem; width: 90%; top: 10vh; }
+    .glowing-skip { bottom: 20px; right: 20px; font-size: 1rem; padding: 10px 20px; }
+    
+    /* 4. Score Screen */
+    .score-elegant-layout {
+        flex-direction: column;
+        padding: 5%;
+        justify-content: flex-start;
+        padding-top: 10vh;
+    }
+    .score-image-container { height: 35vh; margin-bottom: 20px; }
+    .score-typography { padding-left: 0; align-items: center; text-align: center; }
+    .score-numbers { flex-direction: row; align-items: baseline; justify-content: center; margin: 1rem 0; }
+    .score-huge { font-size: 6rem; letter-spacing: -2px; }
+    .score-divider { width: 4px; height: 50px; border-top: none; border-left: 4px solid white; margin: 0 15px; }
+    .score-max { font-size: 3rem; margin-left: 0; }
+    .btn-group-elegant { flex-direction: row; justify-content: center; }
+    
+    /* 6. Info Flow */
+    .floating-node { font-size: 1.5rem; padding: 15px 30px; }
+    .node-1 { top: 20%; left: 10%; }
+    .node-2 { top: 45%; left: 50%; transform: translateX(-50%); }
+    .node-3 { top: 70%; right: 10%; }
+    .info-nav-controls { flex-direction: column; align-items: center; gap: 15px; bottom: 20px; }
+    .reading-content { padding: 2rem; width: 90%; max-width: 400px; }
+    
+    /* 7. pop-up window adjustment */
+    #repo-detail-modal { padding: 25px; width: 95%; max-height: 80vh; }
+    .conclusion-box { padding: 2rem; width: 95%; }
+    .conclusion-box h2 { font-size: 2.2rem !important; }
+    .conclusion-box p { font-size: 1.2rem !important; }
+}
